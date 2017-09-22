@@ -13,7 +13,8 @@
   </saml:AuthenticationStatement>
   <saml:AttributeStatement>
     <saml:Subject>
-      <saml:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" />
+      <saml:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+      </saml:NameIdentifier>
       <saml:SubjectConfirmation>
         <saml:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer</saml:ConfirmationMethod>
       </saml:SubjectConfirmation>
