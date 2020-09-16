@@ -5,6 +5,7 @@ NOTE: currently supports SAML 1.1 tokens
 [![Build Status](https://travis-ci.org/auth0/node-saml.png)](https://travis-ci.org/auth0/node-saml)
 
 ### Usage
+For SKAT SAML 1.1 configuration
 
 ```js
 var saml11 = require('saml').Saml11;
@@ -13,13 +14,15 @@ var options = {
   cert: fs.readFileSync(__dirname + '/test-auth0.pem'),
   key: fs.readFileSync(__dirname + '/test-auth0.key'),
   issuer: 'urn:issuer',
+  nameQualifier: 'skat',
   lifetimeInSeconds: 600,
+  offset: 60,
   audiences: 'urn:myapp',
+  subjectConfirmationMethod: 'holder-of-key',
   attributes: {
-    'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress': 'foo@bar.com',
-    'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name': 'Foo Bar'
+    'urn:bea:security:saml:groups': 'AUTH_LEVEL_7'
   },
-  nameIdentifier: 'foo',
+  nameIdentifier: 'skatGuid=DemoSystemUser,ou=skatSystem,ou=internal,ou=entities,dc=skat,dc=dk',
   sessionIndex: '_faed468a-15a0-4668-aed6-3d9c478cc8fa'
 };
 
